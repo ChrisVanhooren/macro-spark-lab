@@ -22,8 +22,8 @@ export function Heatmap() {
           <div key={c} className="text-center text-muted-foreground py-1">{c}</div>
         ))}
         {cells[1].map((row, i) => (
-          <>
-            <div key={row} className="text-muted-foreground pr-2 flex items-center justify-end">{row}</div>
+          <div key={row} className="contents">
+            <div className="text-muted-foreground pr-2 flex items-center justify-end">{row}</div>
             {cells[0].map((_, j) => {
               const val = v(i, j);
               const isPos = val > 0.5;
@@ -42,7 +42,7 @@ export function Heatmap() {
                 </div>
               );
             })}
-          </>
+          </div>
         ))}
       </div>
     </div>
